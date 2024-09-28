@@ -27,3 +27,5 @@ let number;
 console.log(typeof null); // object
 
 console.log(typeof undefined); //undifined
+
+//changed for the description
