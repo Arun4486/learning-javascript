@@ -7,6 +7,7 @@ let accState; //variables that doesn't get assigned any value are called and ret
 
 // accId = 333; Not Allowed , const takes fixed values
 // "var" can't resolve block or function scope so, it's not preferable...instead "let" is used as variable
+// let can be accessed on local scope only while var is accessed globally
 
 accEmail = "b@gmail.com";
 accPass = "b@123";
