@@ -1,4 +1,4 @@
-// singleton -->  if initialized as constructor
+// singleton -->  if declared as constructor 
 
 // object literals
 
