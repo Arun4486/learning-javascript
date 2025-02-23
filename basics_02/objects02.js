@@ -73,3 +73,30 @@ const newObj = {
 // to check if any object has a specific property or not
 // console.log(newObj.hasOwnProperty('email')); //true
 
+
+
+// destructuring
+
+const cource = {
+    name : "chai_aur_js",
+    price : 1000,
+    instructor : "hitesh"
+}
+
+// console.log(cource.instructor); //hitesh
+
+// if we need this value aften then it's easy to destructure it
+
+const {instructor} = cource;
+// console.log(instructor); // hitesh
+// we can also rename it
+
+const {instructor: inst} = cource;
+// console.log(inst); // hitesh
+
+// APIs application  can be an object or list of objects 
+// {
+//     "example" : "thisone",
+
+// } this is jSON formate
+
