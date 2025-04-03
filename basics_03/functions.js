@@ -21,7 +21,7 @@ function addTwoNums(num1, num2){
 // arguments, when calling a function
 
 // const result = addTwoNums(3, 5);
-// console.log("result: ", result); //result:  undefined, return type was consol.log
+// console.log("result: ", result); //result:  undefined, return type was console .log
 
 // for this we need to use return
 
@@ -66,4 +66,48 @@ function loggedUsers(username = "Arun") {
 }
 // console.log(loggedUsers()); // Arun just logged in
 // console.log(loggedUsers("Katiyar")); // Katiyar just logged in
+
+
+// 03/03/25
+
+function calculatePrice(num1){
+    return num1;
+}
+// console.log(calculatePrice(2));
+
+// forr unknown number of input, rest operatoe (...)
+function calPrice(...num1){
+    return num1;
+}
+// console.log(calPrice(2,1,3,1,3,1)); // [ 2, 1, 3, 1, 3, 1 ] , bundles up all input into an array
+
+function calPriceValue(val1,val2,...num1) {
+    return num1;
+}
+// console.log(calPriceValue(22,221,1221,12,3,1)); //[ 1221, 12, 3, 1 ] , all values except val1,val2
+
+const user = {
+    username : "Arun",
+    price  : 199
+}
+
+function handleObj(anyobj){
+    console.log(`username is ${anyobj.username} and price is ${anyobj.price}`);
+    
+}
+
+//handleObj(user); //username is Arun and price is 199, can pass any obj instead of user
+// we can directly pass any obj without declaring it
+
+// handleObj({
+//     username:"Dolo",
+//     price:399
+// }) //username is Dolo and price is 399
+
+const newarr = [1,2,4,2,2,4]
+function returnResult(getarr){
+    return getarr[2];
+}
+// console.log(returnResult(newarr)); //4
+// console.log(returnResult([2,4,2,4,23,2])); //2
 
