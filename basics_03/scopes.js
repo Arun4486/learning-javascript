@@ -1,5 +1,7 @@
 //let , var and const
-
+// var can be redeclared(datatype) and updated, 
+// let can't be redeclared but can be updated,
+// const can neither be redeclared nor updated 
  let a =100;
 // const b =20;
 // var c =30;
