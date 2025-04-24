@@ -6,7 +6,14 @@ const arr = [1,3,4,2,2,3,4]
 // }
 
 for (const num of arr){
-    // console.log(num);
+     console.log(num);
+     /*1
+3
+4
+2
+2
+3
+4 */
     
 }
 
@@ -48,7 +55,7 @@ const myObj = {
     'game2':"valorant"
 }
 
-for (const element of myObj) {
-    // console.log(element); //  myObj is not iterable, not by for of loop
+// for (const element of myObj) {
+//     // console.log(element); //  myObj is not iterable, not by for of loop
     
-}
+// }
