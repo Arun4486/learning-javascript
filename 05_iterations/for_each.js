@@ -53,8 +53,14 @@ const myCoding = [
 ]
 
 myCoding.forEach( (item)=>{
-    console.log(item.file, item.name);
+    //console.log(item.file, item.name);
     /*name.js js
     name.java java
     name.py python */
 })
+
+const value = coding.forEach( (item)=>{
+    return item;
+})
+
+console.log(value); // undefined , we can't store values into a variable by using for each loop(method)
