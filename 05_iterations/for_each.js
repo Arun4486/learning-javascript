@@ -63,4 +63,4 @@ const value = coding.forEach( (item)=>{
     return item;
 })
 
-console.log(value); // undefined , we can't store values into a variable by using for each loop(method)
+console.log(value); // undefined ,it does'nt return anythong,  we can't store values into a variable by using for each loop(method)
