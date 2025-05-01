@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: aqua; color: black;">
+    
+</body>
+<script>
+    const div = document.createElement('div')
+    console.log(div); // empty div element, if it was something else like h1 it would be h1 in
+    div.className = "main"; // added class
+    // div.id = "myId" // added id
+    div.id = Math.round(Math.random()*10 +1);// new id everytime
+
+    // setting custom attributes
+    div.setAttribute("title", "generate title") // it is preferable bcz, innerHtml takes reference then override it and it directly updates it's value
+    // styling also
+    div.style.backgroundColor = "orange"
+    div.style.padding = "12px" // evrything on console, but nothing on page, bcz  no html yet
+
+    // adding text node to html
+    // div.innerHTML = "hey there";
+    // or
+    const addText = document.createTextNode("hey there");
+    div.appendChild(addText);
+    // attaching to dom
+    document.body.appendChild(div)
+</script>
+</html>

@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM </title>
+</head>
+<body style="background-color: aqua; color: black;">
+    <div class="parent">
+        <div class="day" ><h1 style="font-weight: 0;">Monday</h1></div>
+        <div class="day" ><h1 style="font-weight: 0;">Tuesday</h1></div>
+        <div class="day" ><h1 style="font-weight: 0;">Wednessday</h1></div>
+        <div class="day" ><h1 style="font-weight: 0;">Thursday</h1></div>
+
+    </div>
+</body>
+<script>
+    // to select parent element
+    // moving from parent to child
+    const parent = document.querySelector('.parent');
+    // console.log(parent); // complete parent div
+    // console.log(parent.children); // HTML collection (array like) of 4 divs(day)
+    // console.log(parent.children[1]); // div tuesday    
+    // console.log(parent.children[1].innerHTML); // Tuesday, 
+    
+    // iteration through normal looping
+    for (let i = 0; i< parent.children.length; i++) {
+        // console.log(parent.children[i].innerHTML); // all days in diffrent line
+    }
+    
+    // changing style with dom elememts
+    parent.children[1].style.color = "red"; // works
+    // console.log(parent.firstElementChild); // Monday
+    // console.log(parent.lastElementChild.innerHTML); // h1 Thursday
+
+    // moving from child to parent
+    const dayOne = document.querySelector('.day'); // it takes whatever first value it gets
+    // console.log(dayOne); // h1 monday
+    // using queryselector to reach child to parent is time taking as it traverse through whole DOM , so
+
+    // console.log(dayOne.parentElement); // parent div
+    // console.log(dayOne.nextElementSibling); // div Tuesday
+    // console.log("NODES :", parent.childNodes); // gives 9 nodes bcz every line break is considered a text node, after one line break if continuous line breaks are given it considered as one only
+                    
+    
+    
+</script>
+</html>
