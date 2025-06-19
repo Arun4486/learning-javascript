@@ -119,3 +119,60 @@ form.addEventListener('submit', function(e){
     }
 })
 ```
+# Digital clock
+# html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Digital clock</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: #fff;
+        }
+        .center {
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #clock {
+            font-size: 40px;
+            background-color: rgb(22, 1, 254);
+            padding: 20px 50px;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" aria-current="page">Home</a>
+        <a target="_blank" href="youtube.com">Youtube</a>
+    </nav>
+    <div class="center">
+        <div id="banner"><span>Your Local Time</span></div>
+        <div id="clock"></div>
+    </div>
+    <script src="chaiaurcode.js"></script>
+</body>
+</html>
+
+# JS
+```
+const clock = document.getElementById('clock');
+// const clock = document.queryselector('clock');
+
+
+
+setInterval(function(){
+    let date = new Date();
+    //clock.innerHTML = date.toLocaleDateString();
+    clock.innerHTML = date.toLocaleTimeString();
+}, 1000); // 1000 for 1 sec
+
+```
