@@ -29,7 +29,7 @@
 </html>
 
 ## JS
-```
+```javascript
 const buttons = document.querySelectorAll('.button');
 const body = document.querySelector('body');
 
@@ -87,7 +87,7 @@ buttons.forEach(function (button){
 </html>
 
 # JS
-```
+```javascript
 const form = document.querySelector('form');
 // this usecase will give empty value as page reloads, without event
 // const h = parseInt(document.querySelector('#height').value);
@@ -163,7 +163,7 @@ form.addEventListener('submit', function(e){
 </html>
 
 # JS
-```
+```javascript
 const clock = document.getElementById('clock');
 // const clock = document.queryselector('clock');
 
@@ -174,5 +174,146 @@ setInterval(function(){
     //clock.innerHTML = date.toLocaleDateString();
     clock.innerHTML = date.toLocaleTimeString();
 }, 1000); // 1000 for 1 sec
+
+```
+
+# html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Guess The NUmber</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <nav>
+        <a href="/" aria-current="page">Home</a>
+        <a target="_blank" href="youtube.com">Youtube</a>
+    </nav>
+    <div id="wrapper" style="display: flex; align-items: center; flex-direction: column; justify-content: center;">
+        <h1>Number Guessing game</h1>
+        <p>Try and guess a random no. 1-100</p>
+        <p>You have 10 attempts to guess the roght no.</p>
+    </br>
+        <form class="form">
+            <label for="guessFeild" id="guess" style="font-size: 50px;">Guess a No.</label> </form><br>
+            <input type="text" id="guessFeild" class="guessFeild">
+            <button type="submit" id="subt">Submit Guess</button>
+            <!-- <input type="submit" id="subt" value="Submit guess"> -->
+        </form>
+        <div class="resultParas">
+            <p>Previous Guesses: <span class="guesses"></span></p>
+            <p>Guesses Remaining: <span class="lastResult"></span></p>
+            <p class="lowOrHigh"></p>
+        </div>
+    </div>
+    <script src="chaiaurcode.js"></script>
+</body>
+</html>
+
+# JS
+```javascript
+let randomNumber = (parseInt(Math.random() * 100 + 1));
+const submit = document.querySelector('#subt');
+const userInput = document.querySelector('#guessFeild');
+const guessSlot = document.querySelector('.guesses');
+const remaining = document.querySelector('.lastResult');
+const lowOrHigh = document.querySelector('.lowOrHigh');
+const startOver = document.querySelector('.resultParas');
+
+const p = document.createElement('p');
+
+let prevGuess = [];
+let numGuesses = 1;
+
+let playGame = true;
+
+if(playGame){
+    submit.addEventListener('click', function(e){
+        e.preventDefault()
+        const guess = parseInt(userInput.value)
+        //console.log(guess);
+        validateGuess(guess)
+    })
+}
+function validateGuess(guess){
+    //to limit the input
+    if(isNaN(guess)){
+        alert('Please enter a valid no.');
+    }
+    else if(guess < 1){
+        alert('enter a no. greater than 0');
+    }else if(guess > 100){
+        alert('Please enter a no. less than 100');
+    }else{
+        prevGuess.push(guess);
+        if(numGuesses === 11){
+            displayGuess(guess);
+            displayMessage(`Game over. Random no. was ${randomNumber}`);
+            endGame();
+        }else{
+            displayGuess(guess);
+            checkGuess(guess);
+        }
+    }
+}
+
+function checkGuess(guess){
+    // to guide the user
+    if(guess === randomNumber){
+        displayMessage(`You Guessed it right`);
+        endGame();
+    }else if(guess < randomNumber){
+        displayMessage(`No. is too low`);
+    }else if(guess > randomNumber){
+        displayMessage(`no. is too high`);
+    }
+}
+
+function displayGuess(guess){
+    //
+    userInput.value = ''; // cleanup input feild
+    guessSlot.innerHTML += `${guess} `
+    numGuesses++;
+    if(numGuesses>11){
+        remaining.innerHTML = `you have used all your attempts`;
+    }else{
+        remaining.innerHTML = `${11- numGuesses}`;
+    }
+}
+function displayMessage(message){
+    //DOM manipulation
+    lowOrHigh.innerHTML = `<h2>${message}</h2>`
+}
+
+function endGame(){
+    //
+    userInput.value = '';
+    userInput.setAttribute('disabled', '');
+    p.classList.add('button');
+    p.innerHTML = `<h2 id="newGame">Start new Game</h2>`;
+    startOver.appendChild(p);
+    playGame = false;
+    newGame();
+}
+
+
+function newGame(){
+    
+    const newGameButton = document.querySelector('#newGame');
+    newGameButton.addEventListener('click', function(e){
+        randomNumber = (parseInt(Math.random() * 100 + 1));
+        prevGuess = [];
+        numGuesses = 1;
+        guessSlot.innerHTML = '';
+        remaining.innerHTML = `${11 - numGuesses}`;
+        lowOrHigh.innerHTML = '';
+        userInput.removeAttribute('disabled');
+        startOver.removeChild(p);
+        playGame = true;
+    //
+    })
+}
 
 ```
