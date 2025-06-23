@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Events</title>
+</head>
+<body style="background-color: #414141;">
+    <h2>Amazing Images</h2>
+    <ul id="images">
+        <li><img width="200px" id="furina" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeor9qE0TjoUOw0X2ibPcd4RZxIDbTcZfSuA&s" alt="furina"></li>
+        <li><img width="200px" id="skirk" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5ZSXiAZgV_IBjWHgVx7N4JMAG_durM95OZWXQ_9h7Cd407Kc8V6Ez0f8qbtMoXXDV7tw&usqp=CAU" alt="skirk"></li>
+        <li><img width="200px" id="scara" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROKdAzhdc42Bmc7ePSFddTHb-YtO7uhykjuQ&s" alt="scara"></li>
+        <li><img width="200px" id="gaming" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRneZQKQ_I2OtlhrjF9Fe4N3jpbgLEYxyUhcg&s" alt="gaming"></li>
+        <li><img width="200px" id="jean" src="https://rare-gallery.com/mocahbig/62849-Jean-Genshin-Impact-Blonde-Blue-EyesJean-Genshin.png" alt="jean"></li>
+        <li style="background-color: aliceblue;"><a href="google.com" id="google">Google</a></li> 
+    </ul>
+</body>
+<script>
+    // document.getElementById('gaming').onclick = function(){
+    //     alert("Gaming Clicked");
+    // }// less , only click feature
+    document.getElementById('gaming').addEventListener('click', function(e){// in these function there a 3rd argument that is "false" or "default"
+        //alert("gaming clicked");
+        // console.log(e); // prototype (methods)
+        // type, timestamp, defaultPrevent, 
+    // target, ToElement , srcElement, 
+    // currentTarget, 
+    // clientX, clientY, ScreenX, screenY
+    //altkey, ctrlkey, shiftkey, keyCode
+    }, false); // 3rd argument (false bt default)
+    // event Propagation ==
+    // true or false dosen't effect the output, false (more common) is called 'event bubbling' and true is called 'even capturing'
+
+    //event bubbling => 
+    // document.getElementById('images').addEventListener('click', function(){
+    //     //console.log("clicked on images");// clicked on images(if clicked any)
+        
+    // }, false);
+    // document.getElementById('gaming').addEventListener('click', function(){
+    //     //console.log("clicked on gaming"); // clicked on gaming ,  clicked on images,  (bubbling => gos inside to outside)
+        
+    // }, false);
+
+    // // event capturing ==>
+    // document.getElementById('images').addEventListener('click', function(){
+    //     //console.log("images clicked");// image clicked
+        
+    // }, true);
+    // document.getElementById('gaming').addEventListener('click', function(e){
+    //     //console.log("gaming clicked"); // image clicked , gaming clicked
+    //     //e.stopPropagation(); // to stop going to inside or outside
+    // }, true);
+
+    // // default Prevent
+
+    // document.getElementById('google').addEventListener('click', function(e){
+    //     console.log("google clicked");
+    //     e.preventDefault(); // by this the link doesn't work as it should but we can make it do whatever we want
+    // })
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        //console.log(e.target); // gives the image tag that is been clicked.
+        //console.log(e.target.parentNode); // returns li tag
+        //let removeIt = e.target.parentNode;
+        //removeIt.remove(); // image that is clicked is removed from UI
+        // removeIt.parentNode.removeChild(removeIt); // works same
+        //removeIt.removeIt(); // its removing the parent, so if the li is clicked by mistake the whole ul gets removed
+
+        console.log(e.target.tagName);
+        if(e.target.tagName === 'IMG'){
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode;
+            removeIt.remove(); // removes only if the image is clicked
+        }
+        
+    })
+</script>
+</html>
