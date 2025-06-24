@@ -1,0 +1,13 @@
+JS is synchronous and single threaded by default
+        => one task at a time
+        Thread => smallest unit of execution within a process, A thread is a path of execution within that process.
+
+Execution context =>
+        execute one line of code at a time
+
+Bloking Code => 
+        Blocks the flow of program (reading a file in sync means it can't perform any other task at that time)
+        EX == when updating txn in database after the process is done
+
+Non Blocking Code =>
+        Doesn't Block the flow
