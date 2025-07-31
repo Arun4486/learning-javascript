@@ -2,6 +2,7 @@
 
 ## 01 color swticher
 ## HTML
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +28,7 @@
     <script src="chaiaurcode.js"></script>
 </body>
 </html>
-
+```
 ## JS
 ```javascript
 const buttons = document.querySelectorAll('.button');
