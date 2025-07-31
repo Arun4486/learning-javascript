@@ -54,6 +54,7 @@ buttons.forEach(function (button){
 ```
 # 02 BMI calculator
 # html
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,7 +87,7 @@ buttons.forEach(function (button){
 </body>
 <script src="chaiaurcode.js"></script>
 </html>
-
+```
 # JS
 ```javascript
 const form = document.querySelector('form');
@@ -122,6 +123,7 @@ form.addEventListener('submit', function(e){
 ```
 # Digital clock
 # html
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -162,7 +164,7 @@ form.addEventListener('submit', function(e){
     <script src="chaiaurcode.js"></script>
 </body>
 </html>
-
+```
 # JS
 ```javascript
 const clock = document.getElementById('clock');
@@ -179,6 +181,7 @@ setInterval(function(){
 ```
 
 # html
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -212,7 +215,7 @@ setInterval(function(){
     <script src="chaiaurcode.js"></script>
 </body>
 </html>
-
+```
 # JS
 ```javascript
 let randomNumber = (parseInt(Math.random() * 100 + 1));
