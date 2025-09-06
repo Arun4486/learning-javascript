@@ -321,3 +321,174 @@ function newGame(){
 }
 
 ```
+
+# SETINTERVAL
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            /* position: relative; */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+        .container {
+            width: 400px;
+            /* position: absolute; */
+            /* top: 50%;
+            left: calc(50% - 200px);
+            transform: translate(-50%, -50%); */
+            padding: 20px;
+            box-shadow: 0px 0px 4px 3px gray;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            transition: ease-in-out 0.3s;
+        }
+        .container:hover{
+            transform: scale(110%);
+        }
+        .container h1{
+            text-decoration: underline;
+            text-shadow:1px 1px 1px gray;
+            font-size: 30px;
+            transition: ease-in-out 0.3s;
+        }
+        h1:hover{
+            transform: scale(120%);
+        }
+        .container span{
+            width: 100%;
+            margin: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        button{
+            width: 80px;
+            font-size: 20px;
+            font-weight: 500;
+            margin-left: 30px;
+            margin-right: 30px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color:aqua;
+            box-shadow: 1px 1px 0px 0px gray;
+            transition: ease-in-out 0.3s;
+        }
+        button:hover{
+            transform: scale(120%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Changing Colors </h1>
+        <span>
+            <button id="start">Start</button>
+            <button id="stop">Stop</button>
+        </span>
+    </div>
+    <script>
+        const ranadomColor = function () {
+            const hex = "123456789ABCDEF";
+            let color = "#"
+            for (let i = 0; i < 6; i++) {
+                color += hex[Math.floor(Math.random() * 16)]
+            }
+            return color;
+        }
+        // console.log(ranadomColor());
+        let intervalId;
+        const btn1 = document.querySelector("#start")
+        const btn2 = document.querySelector("#stop")
+        const startChangingColor = function () {
+            if (!intervalId) {
+                intervalId = setInterval(changeBgColor, 500)
+            }
+            function changeBgColor() {
+                document.body.style.backgroundColor = ranadomColor()
+            }
+        }
+        const stopChangingColor = function () {
+            clearInterval(intervalId)
+            intervalId = null
+        }
+
+        btn1.addEventListener("click", startChangingColor)
+        btn2.addEventListener("click", stopChangingColor)
+    </script>
+</body>
+
+</html>
+
+
+# KEYCHECK
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+        .container{
+            width: 400px;
+            padding: 20px;
+            box-shadow: 0px 0px 4px 3px gray;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Key Checker</h1>
+        <h2></h2>
+    </div>
+    <script>
+        window.addEventListener("keydown", (e) => {
+            document.querySelector("h2").innerHTML = `
+            <div>
+                <table style = "border:1px solid black">
+                    <tr>
+                        <th style = "border:1px solid black">Key</th>
+                        <th style = "border:1px solid black">Key Code</th>
+                        <th style = "border:1px solid black">Code</th>    
+                    </tr>
+                    <tr>
+                    <td style = "border:1px solid black">${e.key === " " ? "space" : e.key}</td>
+                    <td style = "border:1px solid black">${e.keyCode}</td>
+                    <td style = "border:1px solid black">${e.code}</td>
+                    <tr>
+                </table>
+            </div>
+            `
+        })
+    </script>
+</body>
+
+</html>
