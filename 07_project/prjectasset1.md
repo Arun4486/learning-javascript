@@ -323,6 +323,7 @@ function newGame(){
 ```
 
 # SETINTERVAL
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -431,7 +432,7 @@ function newGame(){
 </body>
 
 </html>
-
+```html
 
 # KEYCHECK
 
