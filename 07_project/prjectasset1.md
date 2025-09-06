@@ -435,7 +435,7 @@ function newGame(){
 ```html
 
 # KEYCHECK
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -493,3 +493,4 @@ function newGame(){
 </body>
 
 </html>
+```
