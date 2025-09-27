@@ -63,7 +63,8 @@ const promiseFour = new Promise(function (resolve, reject) {
 
 /**
  * alternalety we use aync await to handle async task but there is no direct way to handle errors, so we use try catch inside async function
- * 
+ * fetch() returns a promise, this promise will fulfilled when response is available
+ * promise does not reject on http errors
  */
 /*
 const promiseFive = new Promise((resolve, reject) => {
