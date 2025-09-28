@@ -20,4 +20,5 @@ kohli.printMe();
     --> A new object is created
     --> A prototype is linked, the newly created object has acces to properties of the conctructor funciton
     --> The constructor function is called with the specified arguments, and this is bound to newly created object.
+                                      
 */
